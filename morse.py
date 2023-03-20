@@ -10,15 +10,17 @@ al_chars = {
 }
 
 print("Translator na Morse'a")
-text_to_translate = input("Wprowadź tekst do tlumaczenia na morsea:   ")
+text_to_translate = input("Wprowadź tekst do tłumaczenia na Morse'a: ")
 
 lista = []
 
-for i in range(len(text_to_translate)):
-    lista.append(al_chars[text_to_translate[i]])
-    print(lista[i], end=" ")
 
-# zabezpieczyc sie przed nieznanymi znakami
+try:
+    for i in range(len(text_to_translate)):
+        lista.append(al_chars[text_to_translate[i]])
+    print(lista[i], end=" ")
+except KeyError:
+    print("Wprowadziłeś znak i/lub znaki, których nie da się przetłumaczyć.")
+
 # dodac GUI
 # dodac wariant dzwiekowy
-# wsadzic to w petle moze przed GUI
