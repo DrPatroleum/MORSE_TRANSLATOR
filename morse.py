@@ -1,4 +1,6 @@
-al_chars = {
+import playsound
+
+all_chars = {
     'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-',
     'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--',
     'X': '-..-', 'Y': '-.--', 'Z': '--..', 'Ą': '.-.-', 'Ć': '-.-..', 'Ę': '..-..', 'Ł': '.-..-', 'Ń': '--.--', 'Ó': '---.', 'Ś': '...-...', 'Ź': '--..-.', 'Ż': '--..-',
@@ -15,12 +17,22 @@ text_to_translate = input("Wprowadź tekst do tłumaczenia na Morse'a: ")
 lista = []
 
 
-try:
-    for i in range(len(text_to_translate)):
-        lista.append(al_chars[text_to_translate[i]])
-    print(lista[i], end=" ")
-except KeyError:
-    print("Wprowadziłeś znak i/lub znaki, których nie da się przetłumaczyć.")
+def play_translated_text():
+    pass
+
+
+def translate():
+    try:
+        for i in range(len(text_to_translate)):
+            lista.append(all_chars[text_to_translate[i]])
+        print(lista[i], end=" ")
+    except KeyError:
+        print("Wprowadziłeś znak i/lub znaki, których nie da się przetłumaczyć.")
+
+
+translate()
+
 
 # dodac GUI
 # dodac wariant dzwiekowy
+# tworzenie plikow dzwiekowych z konkretnym tekstem
